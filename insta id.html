@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj's Web</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  font-family:Arial,Helvetica,sans-serif; color:white;
+  background:radial-gradient(circle at top,#24104f 0,#090014 45%,#000 100%);
+  overflow:hidden;
+}
+.page{text-align:center;padding:30px;animation:fade .8s ease}
+h1{
+  font-size:clamp(2.2rem,8vw,5rem); letter-spacing:2px;
+  text-shadow:0 0 10px #a855f7,0 0 30px #7c3aed;
+}
+p{margin:18px 0 28px;color:#d8c7ff;font-size:1.1rem}
+button{
+  border:1px solid #c084fc; color:white; background:#7c3aed;
+  padding:15px 30px;border-radius:999px;font-size:1rem;font-weight:bold;
+  cursor:pointer; box-shadow:0 0 18px #7c3aed; transition:.25s;
+}
+button:hover{transform:scale(1.07);box-shadow:0 0 35px #a855f7}
+.hidden{display:none}
+.insta{font-size:clamp(2rem,7vw,4rem);color:#f5d0fe;margin:20px 0;
+  text-shadow:0 0 15px #ec4899,0 0 35px #8b5cf6}
+a{color:white;text-decoration:none}
+.back{background:transparent;box-shadow:none;border-color:#6b21a8;margin-top:10px}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+  <main id="home" class="page">
+    <h1>WELCOME RAJ'S WEB</h1>
+    <p>✨ Welcome to my little corner of the internet ✨</p>
+    <button onclick="showInsta()">CLICK HERE</button>
+  </main>
+
+  <main id="insta" class="page hidden">
+    <h1>MY INSTAGRAM</h1>
+    <div class="insta">@devil_raj_.99</div>
+    <button onclick="window.open('https://instagram.com/devil_raj_.99','_blank')">OPEN INSTAGRAM</button>
+    <br>
+    <button class="back" onclick="goBack()">← BACK</button>
+  </main>
+
+<script>
+function showInsta(){
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('insta').classList.remove('hidden');
+}
+function goBack(){
+  document.getElementById('insta').classList.add('hidden');
+  document.getElementById('home').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
